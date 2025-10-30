@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Therapy Response AI Prototype
 
 This repository provides a research prototype to predict whether a patient will respond to chemotherapy or immunotherapy using pre-treatment multimodal data (e.g., medical images + genomics + metabolic/clinical parameters).
@@ -78,3 +79,29 @@ This will print metrics and save a ROC curve to `runs/basic/roc_curve.png`.
 - Extend features and preprocessing as needed for real research.
 
 
+=======
+# Therapy Response AI (Prototype)
+ 
+This repository provides a research prototype to predict whether a patient will respond to chemotherapy or immunotherapy using pre-treatment multimodal data (image + genomics + metabolic/clinical).
+ 
+Important notices: 
+- Synthetic or open, de-identified data only. 
+- No PII/PHI in this repo. 
+- Research/education prototype; not a medical device.
+ 
+Quick Start (Windows): 
+1) python -m venv .venv && . .venv\Scripts\Activate.ps1 && pip install -r requirements.txt 
+2) python data\synthetic_data_generator.py --num-samples 500 --image-size 64 --out-dir data 
+3) python training\train.py --csv-path data\example_dataset.csv --image-size 64 --epochs 10 --batch-size 32 --lr 1e-3 --out-dir runs\basic 
+4) python training\evaluate.py --csv-path data\example_dataset.csv --checkpoint runs\basic\best_model.pt --image-size 64 --out-dir runs\basic
+ 
+Files: 
+- data/synthetic_data_generator.py: creates images and example_dataset.csv 
+- models/multimodal_model.py: CNN image encoder + MLP tabular encoder + fusion 
+- training/train.py: training loop, metrics, checkpoint 
+- training/evaluate.py: ROC AUC, F1, ROC plot (runs\basic\roc_curve.png) 
+ 
+Privacy and Ethics: 
+- Only synthetic or public, de-identified data. 
+- Do not use for clinical decision making.
+>>>>>>> 80b1677 ( docs: complete README with setup and usage)
