@@ -104,4 +104,5 @@ Files:
 Privacy and Ethics: 
 - Only synthetic or public, de-identified data. 
 - Do not use for clinical decision making.
->>>>>>> 80b1677 ( docs: complete README with setup and usage)
+>>>>>>> 
+
